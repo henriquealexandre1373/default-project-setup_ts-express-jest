@@ -1,0 +1,13 @@
+{
+  "name": "default-project-setup_ts-express-jest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/henriquealexandre1373/default-project-setup_ts-express-jest.git",
+  "author": "henrique.alexandre <developer.henrique1373@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.5.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {}
+}
