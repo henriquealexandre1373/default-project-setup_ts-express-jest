@@ -10,7 +10,8 @@
     "husky:prepare": "husky install",
     "prepare": "husky install",
     "test": "jest --passWithNoTests",
-    "test:watch": "yarn test --watch"
+    "test:watch": "yarn test --watch",
+    "test:staged": "yarn test --findRelatedTests"
   },
   "devDependencies": {
     "@types/jest": "^29.5.3",

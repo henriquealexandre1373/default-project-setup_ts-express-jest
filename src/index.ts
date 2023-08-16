@@ -1,1 +1,5 @@
-console.log('husky and lint-staged is working!!')
+export default class Person {
+  sayMyName() {
+    return 'Henrique'
+  }
+}
