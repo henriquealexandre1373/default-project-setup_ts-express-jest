@@ -1,1 +1,1 @@
-console.log('start:dev is working!')
+console.log('husky and lint-staged is working!!')
