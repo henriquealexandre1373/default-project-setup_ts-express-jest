@@ -8,10 +8,11 @@
   "scripts": {
     "start:dev": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts",
     "husky:prepare": "husky install",
-    "prepare": "husky install",
+    "prepare": "husky install && sudo chmod ug+x .husky/*",
     "test": "jest --passWithNoTests",
     "test:watch": "yarn test --watch",
-    "test:staged": "yarn test --findRelatedTests"
+    "test:staged": "yarn test --findRelatedTests",
+    "test:push": "yarn test --coverage"
   },
   "devDependencies": {
     "@types/jest": "^29.5.3",
