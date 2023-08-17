@@ -1,10 +1,11 @@
-import TestImport from '@/testImport'
+import * as express from 'express'
+import { Request, Response } from 'express'
+import Person from '@/person'
 
-export default class Person {
-  sayMyName() {
-    TestImport.logImport()
-    return 'Henrique'
-  }
-}
+const app = express()
 
-console.log('yarn start is running')
+app.get('/', (req: Request, res: Response) => {
+  return res.send(new Person().sayHello())
+})
+
+app.listen(3000)
