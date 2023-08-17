@@ -3,3 +3,5 @@ export default class Person {
     return 'Henrique'
   }
 }
+
+console.log('yarn start is running')

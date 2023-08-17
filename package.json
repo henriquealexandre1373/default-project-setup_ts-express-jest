@@ -6,6 +6,8 @@
   "author": "henrique.alexandre <developer.henrique1373@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
     "start:dev": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts",
     "husky:prepare": "husky install",
     "prepare": "husky install && sudo chmod ug+x .husky/*",
