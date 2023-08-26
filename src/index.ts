@@ -1,11 +1,7 @@
 import * as express from 'express'
-import { Request, Response } from 'express'
-import Person from '@/person'
+import routes from '@/routes'
 
 const app = express()
-
-app.get('/', (req: Request, res: Response) => {
-  return res.send(new Person().sayHello())
-})
+app.use(routes)
 
 app.listen(3000)
