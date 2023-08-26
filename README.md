@@ -1,9 +1,2 @@
-# default-project-setup_ts-express-jest
-This repository contains the initial settings of a typescript, express and jest project.
-It is configured:
-- Typescript
-- ESlint and prettier
-- Husky and lint staged
-- Jest
-- Scripts
-- Express
+# my-contacts
+This repository contains the first project of the JStack course. However, I added typescript and jest to train, in addition to configuring the initial setup separately.
