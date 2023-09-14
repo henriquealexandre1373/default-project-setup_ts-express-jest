@@ -10,7 +10,9 @@
     "strict": true,
     "skipLibCheck": true,
     "paths": {
-      "@/*": ["*"]
+      "@/*": ["*"],
+      "@Controllers/*": ["./app/controllers/*"],
+      "@Repositories/*": ["./app/repositories/*"]
     },
     "baseUrl": "src"
   }
