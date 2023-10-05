@@ -1,12 +1,15 @@
 import { Request, Response } from 'express'
+import ContactRepository from '@Repositories/ContactRepository'
 
 class ContactController {
-  index(request: Request, response: Response) {
+  async index(request: Request, response: Response) {
     // List all records
-    response.send('Send from Contact Controller')
+    const contacts = await ContactRepository.findAll()
+
+    response.json(contacts)
   }
 
-  show() {
+  async show() {
     // Get a record
   }
 
@@ -18,7 +21,7 @@ class ContactController {
     // Edit a record
   }
 
-  delete() {
+  async delete() {
     // Delete a record
   }
 }
