@@ -31,6 +31,12 @@ class ContactRepository {
       resolve(contacts)
     })
   }
+
+  findById(id: string) {
+    return new Promise((resolve) => {
+      resolve(contacts.find((contact) => contact.id === id))
+    })
+  }
 }
 
 export default new ContactRepository()

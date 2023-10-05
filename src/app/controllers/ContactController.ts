@@ -9,8 +9,16 @@ class ContactController {
     response.json(contacts)
   }
 
-  async show() {
+  async show(request: Request, response: Response) {
     // Get a record
+    const { id } = request.params
+    const contact = await ContactRepository.findById(id)
+
+    if (!contact) {
+      return response.status(404).json({ error: 'User not found' })
+    }
+
+    response.json(contact)
   }
 
   store() {
