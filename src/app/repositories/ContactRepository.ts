@@ -8,7 +8,7 @@ interface Contacts {
   category_id: string
 }
 
-const contacts: Array<Contacts> = [
+let contacts: Array<Contacts> = [
   {
     id: v4(),
     name: 'Henrique',
@@ -35,6 +35,13 @@ class ContactRepository {
   findById(id: string) {
     return new Promise((resolve) => {
       resolve(contacts.find((contact) => contact.id === id))
+    })
+  }
+
+  delete(id: string) {
+    return new Promise<void>((resolve) => {
+      contacts = contacts.filter((contact) => contact.id !== id)
+      resolve()
     })
   }
 }
