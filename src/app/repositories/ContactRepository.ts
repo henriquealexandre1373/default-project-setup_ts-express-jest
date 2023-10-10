@@ -1,14 +1,17 @@
 import { v4 } from 'uuid'
 
-interface Contacts {
-  id: string
+interface createContact {
   name: string
   email: string
   phone: string
   category_id: string
 }
 
-let contacts: Array<Contacts> = [
+interface Contact extends createContact {
+  id: string
+}
+
+let contacts: Array<Contact> = [
   {
     id: v4(),
     name: 'Henrique',
@@ -26,19 +29,25 @@ let contacts: Array<Contacts> = [
 ]
 
 class ContactRepository {
-  findAll() {
-    return new Promise((resolve) => {
+  findAll(): Promise<Contact[]> {
+    return new Promise<Contact[]>((resolve) => {
       resolve(contacts)
     })
   }
 
-  findById(id: string) {
-    return new Promise((resolve) => {
+  findById(id: string): Promise<Contact | undefined> {
+    return new Promise<Contact | undefined>((resolve) => {
       resolve(contacts.find((contact) => contact.id === id))
     })
   }
 
-  delete(id: string) {
+  findByEmail(email: string): Promise<Contact | undefined> {
+    return new Promise<Contact | undefined>((resolve) => {
+      resolve(contacts.find((contact) => contact.email === email))
+    })
+  }
+
+  delete(id: string): Promise<void> {
     return new Promise<void>((resolve) => {
       contacts = contacts.filter((contact) => contact.id !== id)
       resolve()
