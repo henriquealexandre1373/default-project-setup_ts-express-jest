@@ -53,6 +53,21 @@ class ContactRepository {
       resolve()
     })
   }
+
+  create({ name, email, phone, category_id }: createContact): Promise<Contact> {
+    return new Promise<Contact>((resolve) => {
+      const newContact = {
+        id: v4(),
+        name,
+        email,
+        phone,
+        category_id,
+      }
+      contacts.push(newContact)
+
+      resolve(newContact)
+    })
+  }
 }
 
 export default new ContactRepository()
