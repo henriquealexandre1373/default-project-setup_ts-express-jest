@@ -68,6 +68,28 @@ class ContactRepository {
       resolve(newContact)
     })
   }
+
+  update(
+    id: string,
+    { name, email, phone, category_id }: createContact,
+  ): Promise<Contact> {
+    return new Promise<Contact>((resolve) => {
+      const updatedContact = {
+        id,
+        name,
+        email,
+        phone,
+        category_id,
+      }
+      contacts.forEach((contact) => {
+        if (contact.id === id) {
+          return (contact = { ...contact, ...updatedContact })
+        }
+      })
+
+      resolve(updatedContact)
+    })
+  }
 }
 
 export default new ContactRepository()
